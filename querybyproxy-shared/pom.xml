@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.cementframework</groupId>
+	<artifactId>querybyproxy-shared</artifactId>
+	<version>0.5.4-SNAPSHOT</version>
+
+	<parent>
+		<groupId>org.cementframework</groupId>
+		<artifactId>querybyproxy</artifactId>
+		<version>0.5.4-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<packaging>jar</packaging>
+
+	<name>Query By Proxy: Shared API</name>
+	<description>
+       A criteria api where path expression are created by invoking methods on a proxy for class.
+    </description>
+	<url>http://www.cementframework.org/wiki/display/main/query-by-proxy</url>
+
+	<developers>
+		<developer>
+			<name>Allen Parslow</name>
+			<email>allenparslow@live.com</email>
+		</developer>
+	</developers>
+	<organization>
+		<name>cementframework.org</name>
+		<url>www.cementframework.org</url>
+	</organization>
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<scm>
+		<connection>scm:svn:https://cementframework.svn.sourceforge.net/svnroot/cementframework/persistence/querybyproxy/trunk/</connection>
+	</scm>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.cementframework</groupId>
+			<artifactId>recordingproxy</artifactId>
+			<version>0.5.4-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>2.2</version>
+		</dependency>
+
+		<!-- Testing Dependencies -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.7</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+</project>
