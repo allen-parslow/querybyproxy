@@ -21,6 +21,7 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.cementframework.recordingproxy.api.AliasedProperty;
 import org.cementframework.recordingproxy.api.ClassMetaData;
@@ -34,7 +35,7 @@ import org.cementframework.recordingproxy.api.PropertyMetaData;
 public class ClassMetaDataUtils {
 
     private static final Map<Class<?>, ClassMetaData> META_DATA_MAP =
-            new HashMap<Class<?>, ClassMetaData>();
+            new ConcurrentHashMap<Class<?>, ClassMetaData>();
 
     /**
      * Gets property information about the specified class.
@@ -44,6 +45,9 @@ public class ClassMetaDataUtils {
      * @return property information.
      */
     public static ClassMetaData getMetaData(Class<?> clazz) {
+        if (clazz == null) {
+            throw new IllegalArgumentException("Class is required");
+        }
         ClassMetaData info = META_DATA_MAP.get(clazz);
 
         if (info == null) {
